@@ -1,5 +1,5 @@
 #define PHP_NANOPK_EXTNAME "nanopk"
-#define PHP_NANOPK_VERSION "0.0.14"
+#define PHP_NANOPK_VERSION "0.0.15"
 
 PHP_FUNCTION(nanopk);
 PHP_FUNCTION(nanopkavg);

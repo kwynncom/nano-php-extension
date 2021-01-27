@@ -1,6 +1,8 @@
 # nano-php-extension
 nanotime and TSC (CPU timestamp counter) for PHP
 
+I link to x64 binaries below.
+
 Purposes: 1. Rapidly create primary / unique keys, 2. nanosecond-precision time, 3. tools to try to correlate TSC and time
 
 Functions:
@@ -41,8 +43,14 @@ More specifically, for a true UUID, you'd need
 ****************
 BINARIES
 
+https://kwynn.com/t/21/01/npk/
 
-
+v0.0.15 - SHA256(2021_01_1_v0_0_15_nanopk.so)= a1bd5d0a0c5f7fd0d3af0859a5cf8308eea2d53b9501abce92956a90236cf1e2
 
 *******
-HISTORY - 
+HISTORY
+
+The first versions are at https://github.com/kwynncom/readable-primary-key/tree/5d6b839dbeba7b3b6355dcabe03a4d631aaf9b56  and earlier versions.
+
+This needs its own repo, though.  This repo starts with version 0.0.15.
+
