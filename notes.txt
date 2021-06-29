@@ -1,0 +1,18 @@
+2021/06/29 7:21pm my time (7:53pm is closer to commit)
+
+commit note: v0.2, error handle, build instructions
+
+
+
+
+OTHER CHANGES:
+
+promoting package version to 0.2.0 or above.  It has earned that and more based on my usage, but we'll be modest for now.
+
+
+CODE CHANGES:
+
+if clock_gettime does not return 0 (non error), then return 0 as the time
+	-- only did this in the main function.  I'd already done it in uptime()
+
+Or more specifically return both s and ns as 0.

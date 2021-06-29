@@ -65,7 +65,7 @@ PHP_FUNCTION(rdtscp) {
 
 struct timespec c_get_timespec() {
     struct timespec sts;
-    clock_gettime(CLOCK_REALTIME, &sts); // not sure if need to do anything with int ret / return value
+    if (clock_gettime(CLOCK_REALTIME, &sts) != 0) sts.tv_sec = sts.tv_nsec = 0;
     return sts;
 }
 
