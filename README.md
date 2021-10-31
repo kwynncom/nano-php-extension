@@ -119,6 +119,7 @@ SHA512(/usr/lib/php/20200930/nanopk.so)= f6a661bbc69e0dcb81da487a2df1217121bc343
 cp /usr/lib/php/20200930/nanopk.so /tmp
 mv /tmp/nanopk.so /tmp/nanopk_v0_3_2_x86_64_for_PHP_v8_0_8_2021_1031_2_1745_EDT.so
 
+SHA512(/home/ubuntu/www/t/21/01/npk/nanopk_v0_3_2_x86_64_for_PHP_v8_0_8_2021_1031_2_1745_EDT.so)= f6a661bbc69e0dcb81da487a2df1217121bc343b50fc66158cd70b2b56a7f4467e49656317b1fa3030493cb620427d10b9774f824a0c73d601f7ccf746f3b84a
 
 
 v0.3.0

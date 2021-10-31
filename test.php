@@ -1,5 +1,7 @@
 <?php
 
+if (PHP_SAPI !== 'cli') header('Content-Type: text/plain');
+
 $name = 'nanopk';
 echo($name . ' version: ' . phpversion($name) . "\n");
 echo('PHP version: ' . PHP_VERSION . "\n");
@@ -22,4 +24,4 @@ if (1) {
 }
 
 echo('PHP version: ' . PHP_VERSION . "\n");
-echo('test version: 0.3.2, 5:41pm' . "\n");
+echo('test version: 0.3.2, this file version 2021/10/31 5:53pm' . "\n");
