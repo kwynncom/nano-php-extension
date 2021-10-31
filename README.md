@@ -5,6 +5,12 @@ I link to x64 binaries below.
 
 Purposes: 1. Rapidly create primary / unique keys, 2. nanosecond-precision time, 3. tools to try to correlate TSC and time
 
+VIEWING / READING / FORMAT NOTE: Newlines don't work well in HTML, so see the raw version (below) or download this file.
+
+Raw version: https://raw.githubusercontent.com/kwynncom/nano-php-extension/main/README.md
+
+******
+
 Functions:
 
 rdtscp() : returns associative array with 2 integer fields
@@ -40,8 +46,14 @@ to use the "raw" view to see newlines properly.
 
 I'm going number the steps like old BASIC lines: 10, 20, etc...
 
+STEP 05: 
+Note that a prevous installation of this extension will confuse matters when you're trying to rebuild.  Your changes 
+won't necessarily show up because PHP is still looking at the older version.  Best to disable the mod while devving:
+
+sudo phpdismod nanopk
+
 STEP 10:
-./build.sh
+bash build.sh
 
 The result should be a PHP var_dump with working functions, ending in something like:
 array(2) {
@@ -97,13 +109,33 @@ BINARIES
 
 https://kwynn.com/t/21/01/npk/
 
+v0.3.0
+SHA512(/usr/lib/php/20200930/nanopk.so)= 6accdea832bfb749163c830c32197a9155fdc7e28fc5508f4e3061e80331548af4a69370359d8c43cdb7a2a8ba6b214d4cdbeda6823e8f68cf0b1ff1ba3bcb8f
+renaming - no need to do this yourself.  I'm just keeping track of how I named it
+cp /usr/lib/php/20200930/nanopk.so /tmp
+mv /tmp/nanopk.so /tmp/nanopk_v0_3_0_x86_64_for_PHP_v8_0_8_2021_1031.so
+
+confirming for myself:
+SHA512(/home/ubuntu/www/t/21/01/npk/nanopk_v0_3_0_x86_64_for_PHP_v8_0_8_2021_1031.so)= 6accdea832bfb749163c830c32197a9155fdc7e28fc5508f4e3061e80331548af4a69370359d8c43cdb7a2a8ba6b214d4cdbeda6823e8f68cf0b1ff1ba3bcb8f
+
+*******
+
+v0.2.0 is not different enough to bother with a new binary
+
 v0.0.15:
 SHA512(2021_01_1_v0_0_15_nanopk.so)= b1b454efeca7cf50d1123df9913911286e5fcb246ea469fe90e706dc3307c69256aa366dc31fa265cb4768fd854c60c8254ba8cb2c72e133f9628590f8989d9e
 SHA256(2021_01_1_v0_0_15_nanopk.so)= a1bd5d0a0c5f7fd0d3af0859a5cf8308eea2d53b9501abce92956a90236cf1e2
 
-v0.2.0 is not different enough to bother with a new binary
-
 *******
+CREDITS / HELPFUL LINKS
+
+https://www.seidengroup.com/2020/12/07/porting-extensions-to-php-8/
+
+The following is useful but not ideally written:
+https://www.phpinternalsbook.com/php7/extensions_design/php_functions.html
+
+
+***************
 POSSIBLE IMPROVEMENTS
 
 I have found with recent (2021/06) experiments with pure C that making a library static (all code included rather than relying on 

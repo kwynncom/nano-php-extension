@@ -7,13 +7,33 @@
 #include <sys/sysinfo.h>
 #include <stdbool.h>
 
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_nanopk, 0, 0, 0)
+	ZEND_ARG_INFO(0, setReturnValueFlag)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_nanopkavg, 0, 0, 0)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_nanotime, 0, 0, 0)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_nanotime_array, 0, 0, 0)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_rdtscp, 0, 0, 0)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_uptime, 0, 0, 0)
+ZEND_END_ARG_INFO()
+
 zend_function_entry nanopk_functions[] = {
-    PHP_FE(nanopk        , NULL)
-    PHP_FE(nanopkavg     , NULL)
-    PHP_FE(nanotime      , NULL)
-    PHP_FE(nanotime_array, NULL)
-    PHP_FE(rdtscp        , NULL)
-    PHP_FE(uptime        , NULL)
+    PHP_FE(nanopk        , arginfo_nanopk   )
+    PHP_FE(nanopkavg     , arginfo_nanopkavg)
+    PHP_FE(nanotime      , arginfo_nanotime)
+    PHP_FE(nanotime_array, arginfo_nanotime_array)
+    PHP_FE(rdtscp        , arginfo_rdtscp)
+    PHP_FE(uptime        , arginfo_uptime)
     PHP_FE_END
 };
 
@@ -143,7 +163,7 @@ PHP_FUNCTION(nanopk) {
     
     const long defaultArgs = NANOPK_UNS | NANOPK_TSC | NANOPK_PID;
     long arg = defaultArgs;
-    if (ZEND_NUM_ARGS() > 0 && zend_parse_parameters(ZEND_NUM_ARGS(), "l", &arg) == FAILURE) return;
+    if (ZEND_NUM_ARGS() > 0 && zend_parse_parameters(ZEND_NUM_ARGS(), "l", &arg) == FAILURE) RETURN_LONG(0);
     if (arg == 0) arg = defaultArgs;
 
     uint64_t tick = -1;

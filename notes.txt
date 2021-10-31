@@ -1,3 +1,11 @@
+2021/10/31 - for PHP 8.x
+
+Working on upgrade to PHP 8.x.  Helpful links:
+
+https://www.seidengroup.com/2020/12/07/porting-extensions-to-php-8/
+
+
+************
 2021/06/29 7:21pm my time (7:53pm is closer to commit)
 
 commit note: v0.2, error handle, build instructions
