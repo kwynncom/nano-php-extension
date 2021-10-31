@@ -3,8 +3,6 @@
 commit note: v0.2, error handle, build instructions
 
 
-
-
 OTHER CHANGES:
 
 promoting package version to 0.2.0 or above.  It has earned that and more based on my usage, but we'll be modest for now.

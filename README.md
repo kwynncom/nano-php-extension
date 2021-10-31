@@ -116,4 +116,8 @@ HISTORY
 The first versions are at https://github.com/kwynncom/readable-primary-key/tree/5d6b839dbeba7b3b6355dcabe03a4d631aaf9b56  and earlier versions.
 
 This needs its own repo, though.  This repo starts with version 0.0.15.
+********
+GIT NOTES:
+
+ssh mode: git remote set-url origin git@github.com:kwynncom/nano-php-extension
 
