@@ -41,18 +41,22 @@ uptime() : various info on system uptime
 **********
 BUILDING
 
-From "this" directory, make build.sh executable or use bash.  Note that if you are looking at this file on the web, you proably have 
-to use the "raw" view to see newlines properly.  
+* Note: that if you are looking at this file on the web, you proably have to use the "raw" view to see newlines properly.  
+* Note: I found that if I tried to simply "mv" the .so file, I had weird conflicts with PHP versions, and nanotime() and such were undefined.  
+        So you may have to do all of these steps if you are replacing the .so rather than building it.
 
 I'm going number the steps like old BASIC lines: 10, 20, etc...
 
 STEP 05: 
-Note that a prevous installation of this extension will confuse matters when you're trying to rebuild.  Your changes 
+Note that a prevous installation of this extension may confuse matters when you're trying to rebuild.  Your changes 
 won't necessarily show up because PHP is still looking at the older version.  Best to disable the mod while devving:
 
 sudo phpdismod nanopk
 
 STEP 10:
+
+I am assuming you are in the same directory as this project's build.sh, then:
+
 bash build.sh
 
 The result should be a PHP var_dump with working functions, ending in something like:
@@ -109,13 +113,22 @@ BINARIES
 
 https://kwynn.com/t/21/01/npk/
 
+v0.3.2
+openssl sha512 /usr/lib/php/20200930/nanopk.so
+SHA512(/usr/lib/php/20200930/nanopk.so)= f6a661bbc69e0dcb81da487a2df1217121bc343b50fc66158cd70b2b56a7f4467e49656317b1fa3030493cb620427d10b9774f824a0c73d601f7ccf746f3b84a
+cp /usr/lib/php/20200930/nanopk.so /tmp
+mv /tmp/nanopk.so /tmp/nanopk_v0_3_2_x86_64_for_PHP_v8_0_8_2021_1031_2_1745_EDT.so
+
+
+
 v0.3.0
 SHA512(/usr/lib/php/20200930/nanopk.so)= 6accdea832bfb749163c830c32197a9155fdc7e28fc5508f4e3061e80331548af4a69370359d8c43cdb7a2a8ba6b214d4cdbeda6823e8f68cf0b1ff1ba3bcb8f
 renaming - no need to do this yourself.  I'm just keeping track of how I named it
 cp /usr/lib/php/20200930/nanopk.so /tmp
 mv /tmp/nanopk.so /tmp/nanopk_v0_3_0_x86_64_for_PHP_v8_0_8_2021_1031.so
 
-confirming for myself:
+Just confirming:
+
 SHA512(/home/ubuntu/www/t/21/01/npk/nanopk_v0_3_0_x86_64_for_PHP_v8_0_8_2021_1031.so)= 6accdea832bfb749163c830c32197a9155fdc7e28fc5508f4e3061e80331548af4a69370359d8c43cdb7a2a8ba6b214d4cdbeda6823e8f68cf0b1ff1ba3bcb8f
 
 *******

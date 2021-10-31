@@ -1,5 +1,8 @@
 2021/10/31 - for PHP 8.x
 
+v0.3.2 makes the NANOPK_ALL flag work properly, and tests it
+v0.3.0 was the PHP 8 upgrade
+
 Working on upgrade to PHP 8.x.  Helpful links:
 
 https://www.seidengroup.com/2020/12/07/porting-extensions-to-php-8/

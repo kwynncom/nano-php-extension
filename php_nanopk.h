@@ -1,5 +1,5 @@
 #define PHP_NANOPK_EXTNAME "nanopk"
-#define PHP_NANOPK_VERSION "0.3.0"
+#define PHP_NANOPK_VERSION "0.3.2"
 
 PHP_FUNCTION(nanopk);
 PHP_FUNCTION(nanopkavg);
@@ -15,4 +15,4 @@ PHP_FUNCTION(uptime);
 #define NANOPK_UNSOI   16
 #define NANOPK_UNSOF   32
 #define NANOPK_VERSION 64
-#define NANOPK_ALL 0xffff
+#define NANOPK_ALL 0xfffffff
