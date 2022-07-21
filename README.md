@@ -59,7 +59,9 @@ I am assuming you are in the same directory as this project's build.sh, then:
 
 bash build.sh
 
-The result should be a PHP var_dump with working functions, ending in something like:
+This will take a few seconds with a bunch of output.  Then you'll get to the following:
+
+The end result should be a PHP var_dump with working functions, ending in something like:
 array(2) {
   ["s"]=>
   int(1625009669)
@@ -76,7 +78,11 @@ cd /tmp/npk
 sudo make install
 
 Resulting in (something like)
-Installing shared extensions:     /usr/lib/php/20190902/
+Installing shared extensions:     /usr/lib/php/20210902/
+
+STEP 25:
+In the /usr/lib/php hierarchy, there may be earlier versions.  Might as well delete them (although doing so is not solving my 
+immediate problem).
 
 STEP 30:
 
@@ -87,6 +93,8 @@ simply to show you what to create and where and what to call everything:
 -rw-r--r-- 1 root root 21 Oct  6  2020 nanopk.ini
 /etc/php/7.4/mods-available$ cat nanopk.ini
 extension=nanopk.so
+
+NOTE: It appears that there should only be one newline in that file, not 2 or more.  In other words, a blank line causes trouble.
 
 STEP 40:
 sudo phpenmod nanopk
@@ -166,4 +174,3 @@ This needs its own repo, though.  This repo starts with version 0.0.15.
 GIT NOTES:
 
 ssh mode: git remote set-url origin git@github.com:kwynncom/nano-php-extension
-
