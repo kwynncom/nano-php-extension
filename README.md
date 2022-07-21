@@ -53,6 +53,16 @@ won't necessarily show up because PHP is still looking at the older version.  Be
 
 sudo phpdismod nanopk
 
+Also, delete any older versions in the /usr/lib/php/ hierarchy.
+
+
+STEP 07:
+
+mkdir /tmp/nano
+cd /tmp/nano
+git clone https://github.com/kwynncom/nano-php-extension.git .
+
+
 STEP 10:
 
 I am assuming you are in the same directory as this project's build.sh, then:
@@ -80,10 +90,6 @@ sudo make install
 Resulting in (something like)
 Installing shared extensions:     /usr/lib/php/20210902/
 
-STEP 25:
-In the /usr/lib/php hierarchy, there may be earlier versions.  Might as well delete them (although doing so is not solving my 
-immediate problem).
-
 STEP 30:
 
 Create a file with the following name with the following line.  The following commands are NOT the ones to create it but 
@@ -107,6 +113,7 @@ and it creates the same in 7.4/apache2
 If you want to use it in Apache, you have to restart Apache.  This is a gentle restart:
 sudo apachectl graceful
 
+Also, make sure Apache is running the same version of PHP as you just installed to.
 
 *************
 PURPOSE - ELABORATED
