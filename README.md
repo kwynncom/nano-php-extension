@@ -63,6 +63,14 @@ cd /tmp/nano
 git clone https://github.com/kwynncom/nano-php-extension.git .
 
 
+STEP 08:
+
+sudo apt install php-dev
+# and / or make sure you have 
+which phpize
+# result should be: /usr/bin/phpize
+
+
 STEP 10:
 
 I am assuming you are in the same directory as this project's build.sh, then:
