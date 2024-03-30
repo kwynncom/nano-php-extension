@@ -39,7 +39,7 @@ nanopkavg() : in short the purpose is to get a Uns - TSC association to a known 
 uptime() : various info on system uptime
 
 **********
-BUILDING
+BUILDING (confirmed 2024/03/29 in PHP 8.2.10)
 
 * Note: that if you are looking at this file on the web, you proably have to use the "raw" view to see newlines properly.  
 * Note: I found that if I tried to simply "mv" the .so file, I had weird conflicts with PHP versions, and nanotime() and such were undefined.  
